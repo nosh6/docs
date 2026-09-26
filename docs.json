@@ -1,0 +1,107 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "luma",
+  "name": "Offres",
+  "colors": {
+    "primary": "#2563eb",
+    "light": "#84acf4"
+  },
+  "favicon": "https://media.brand.dev/6690e731-c83a-4461-8497-e580264940e5.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Pour les candidats",
+        "groups": [
+          {
+            "group": "Commencer",
+            "pages": [
+              "introduction",
+              "candidats/alertes-email",
+              "candidats/suivre-une-entreprise"
+            ]
+          },
+          {
+            "group": "Votre compte",
+            "pages": [
+              "candidats/espace-candidatures",
+              "candidats/connexion"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Pour les entreprises",
+        "groups": [
+          {
+            "group": "Votre fiche",
+            "pages": [
+              "entreprises/apercu",
+              "entreprises/revendiquer-sa-fiche",
+              "entreprises/corriger-logo-site"
+            ]
+          },
+          {
+            "group": "Vos offres",
+            "pages": [
+              "entreprises/origine-des-offres",
+              "entreprises/outils-recrutement"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "La Méthode",
+        "groups": [
+          {
+            "group": "Catalogue",
+            "pages": [
+              "methode/perimetre",
+              "methode/deduplication",
+              "methode/lecture-offre"
+            ]
+          },
+          {
+            "group": "Données",
+            "pages": [
+              "donnees/collecte",
+              "donnees/confidentialite",
+              "donnees/contact"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      { "label": "Contact", "href": "mailto:contact@offres.tech" }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Voir les offres",
+      "href": "https://offres.tech"
+    }
+  },
+  "footer": {
+    "links": [
+      {
+        "header": "offres.tech",
+        "items": [
+          { "label": "Les offres", "href": "https://offres.tech" },
+          { "label": "Les entreprises", "href": "https://offres.tech/editeurs" }
+        ]
+      },
+      {
+        "header": "Documentation",
+        "items": [
+          { "label": "Candidats", "href": "/introduction" },
+          { "label": "Entreprises", "href": "/entreprises/apercu" },
+          { "label": "La méthode", "href": "/methode/perimetre" }
+        ]
+      }
+    ]
+  },
+  "seo": {
+    "indexing": "navigable"
+  }
+}

@@ -1,0 +1,79 @@
+---
+title: "Déduplication des offres d'emploi indexées sur offres.tech"
+sidebarTitle: "Déduplication"
+description: "Comment offres.tech détecte et supprime les annonces en double pour vous présenter chaque offre une seule fois, quelle que soit sa source d'origine."
+---
+
+Une même offre d'emploi peut aujourd'hui être publiée simultanément sur la page carrières d'une entreprise, dans son ATS (Greenhouse, Lever, Workday…), et parfois relayée sur des job boards partenaires. Sans mécanisme de déduplication, un candidat verrait la même annonce apparaître deux, trois ou quatre fois dans ses résultats — créant de la confusion et nuisant à la lisibilité du marché. offres.tech résout ce problème de manière systématique.
+
+## Pourquoi la déduplication est-elle importante ?
+
+Lorsqu'une offre apparaît en double, plusieurs problèmes concrets se posent pour le candidat :
+
+- **Perte de temps** : cliquer sur ce qui semble être deux offres distinctes pour réaliser qu'il s'agit du même poste.
+- **Fausse impression de volume** : un marché de l'emploi paraît plus dynamique qu'il ne l'est réellement.
+- **Incohérence des dates** : deux copies d'une même offre peuvent afficher des dates de publication différentes selon la source, rendant difficile l'évaluation de la fraîcheur de l'annonce.
+
+offres.tech s'engage à n'afficher **chaque offre qu'une seule fois**, en conservant systématiquement le lien vers la source la plus directe (page carrières officielle ou ATS de l'entreprise).
+
+## Comment fonctionne la déduplication ?
+
+La détection des doublons repose sur une combinaison de signaux analysés à chaque collecte d'offre :
+
+<Steps>
+  <Step title="Identification de l'entreprise">
+    Chaque entreprise est associée à un identifiant stable dans le catalogue offres.tech. Deux offres provenant de sources différentes mais liées à la même entreprise sont automatiquement mises en compétition pour la déduplication.
+  </Step>
+  <Step title="Correspondance du titre de poste">
+    Le titre de l'offre est normalisé (suppression des majuscules superflues, des mentions H/F/X, des suffixes de localisation) puis comparé aux offres existantes pour la même entreprise.
+  </Step>
+  <Step title="Analyse du contenu">
+    Le contenu principal de l'offre (description du poste, compétences requises) est analysé et comparé aux offres existantes. Deux offres dont le contenu est identique ou très proche sont considérées comme des doublons, même si leur mise en forme diffère légèrement.
+  </Step>
+  <Step title="Vérification de la date et du contexte">
+    La date de publication et la localisation géographique permettent de distinguer une réouverture de poste légitime (même titre, même entreprise, mais six mois plus tard) d'un vrai doublon.
+  </Step>
+</Steps>
+
+## Exemple concret
+
+Prenons l'exemple d'une entreprise SaaS parisienne qui publie une offre de **"Développeur Backend Python (H/F)"** :
+
+<CardGroup cols={3}>
+  <Card title="Source A" icon="globe">
+    Page carrières officielle de l'entreprise (`entreprise.com/jobs`)
+    — publiée le 3 juin
+  </Card>
+  <Card title="Source B" icon="layer-group">
+    ATS Greenhouse (`boards.greenhouse.io/entreprise`)
+    — publiée le 3 juin
+  </Card>
+  <Card title="Source C" icon="share-nodes">
+    Relais sur un job board partenaire
+    — publiée le 5 juin
+  </Card>
+</CardGroup>
+
+offres.tech détecte que ces trois entrées correspondent au même poste. Il conserve **une seule occurrence** dans l'index et oriente le lien vers la source la plus directe — en priorité la page carrières officielle de l'entreprise, ou à défaut son ATS. Les sources B et C sont silencieusement écartées.
+
+<Note>
+  offres.tech ne crée jamais de copie du contenu d'une offre. Le lien affiché pointe toujours vers la page originale de l'employeur. La déduplication agit uniquement sur l'indexation, pas sur le contenu.
+</Note>
+
+## Limites et cas particuliers
+
+<Accordion title="Deux postes identiques dans deux villes différentes">
+  Une entreprise peut recruter un profil identique simultanément à Paris et à Lyon. Ces deux offres sont **conservées séparément** car la localisation constitue une différence substantielle pour le candidat. La déduplication ne fusionne pas les offres multi-sites.
+</Accordion>
+
+<Accordion title="Réouverture d'un poste après fermeture">
+  Si un poste est fermé puis réouvert plusieurs semaines plus tard, la nouvelle publication est traitée comme une offre distincte. Le recul temporel est un critère clé pour distinguer un doublon d'une réouverture légitime.
+</Accordion>
+
+<Accordion title="Offre mise à jour par l'entreprise">
+  Lorsqu'une entreprise modifie le contenu d'une offre existante (salaire ajouté, description reformulée), offres.tech met à jour l'entrée existante plutôt que d'en créer une nouvelle. L'analyse de contenu détecte la modification, mais l'identité de l'offre est préservée.
+</Accordion>
+
+<Tip>
+  Si vous observez une offre en double sur offres.tech, vous pouvez le signaler à [contact@offres.tech](mailto:contact@offres.tech) en précisant les deux URLs concernées. Chaque signalement contribue à améliorer la qualité de l'index.
+</Tip>

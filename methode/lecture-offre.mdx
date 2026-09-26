@@ -1,0 +1,74 @@
+---
+title: "Extraction et lecture des offres d'emploi indexées"
+sidebarTitle: "Lecture d'offre"
+description: "Quels champs offres.tech extrait de chaque annonce, comment les informations sont structurées et pourquoi le lien pointe vers la source originale."
+---
+
+À chaque fois qu'offres.tech découvre une nouvelle offre d'emploi sur la page carrières d'une entreprise ou dans son ATS, un processus d'extraction structure automatiquement les informations disponibles. L'objectif est de présenter une fiche d'offre homogène et lisible, quelle que soit la façon dont l'entreprise a rédigé ou mis en page son annonce.
+
+## Champs extraits de chaque offre
+
+offres.tech tente d'extraire les informations suivantes pour chaque offre indexée :
+
+<CardGroup cols={2}>
+  <Card title="Intitulé du poste" icon="briefcase">
+    Le titre exact tel que publié par l'entreprise, nettoyé des mentions réglementaires redondantes (H/F/X) pour améliorer la lisibilité, sans altérer le sens.
+  </Card>
+  <Card title="Nom de l'entreprise" icon="building">
+    La dénomination officielle de l'entreprise, telle qu'elle figure dans le catalogue offres.tech, avec un lien vers sa fiche entreprise.
+  </Card>
+  <Card title="Localisation" icon="location-dot">
+    Ville et pays du poste. Pour les postes multi-sites, chaque localisation est indiquée. La mention "France" est utilisée lorsque la localisation précise n'est pas spécifiée.
+  </Card>
+  <Card title="Type de contrat" icon="file-contract">
+    CDI, CDD, stage, alternance, freelance — selon les informations disponibles dans l'offre source. Ce champ peut être absent si l'entreprise ne le précise pas.
+  </Card>
+  <Card title="Politique de télétravail" icon="house-laptop">
+    Télétravail complet, hybride, présentiel ou non précisé. offres.tech détecte ces informations dans le corps de l'offre lorsqu'elles ne sont pas structurées en champ distinct.
+  </Card>
+  <Card title="Date de publication" icon="calendar">
+    Date à laquelle l'offre a été détectée pour la première fois par offres.tech, ou date explicite de publication si l'ATS la fournit.
+  </Card>
+</CardGroup>
+
+## Lien vers l'offre originale
+
+<Note>
+  offres.tech ne reproduit pas le contenu des offres d'emploi. Chaque fiche affiche un résumé des champs structurés, puis oriente le candidat vers **la page originale de l'employeur** (page carrières ou ATS). Vous lisez et postulez directement sur le site de l'entreprise — offres.tech n'est jamais un intermédiaire dans le processus de candidature.
+</Note>
+
+Ce choix est fondamental : il garantit que le candidat consulte toujours la version la plus à jour de l'offre, et que l'entreprise reçoit la candidature via son propre outil de suivi.
+
+## Langues des offres
+
+offres.tech indexe des offres rédigées en **français et en anglais**. De nombreuses entreprises tech en France publient leurs offres en anglais, notamment pour les postes à dimension internationale ou au sein d'équipes globales.
+
+La langue de l'offre est détectée automatiquement et indiquée sur la fiche. Le moteur de recherche d'offres.tech fonctionne dans les deux langues : une requête en français peut retourner des offres rédigées en anglais si elles correspondent au profil recherché.
+
+<Tip>
+  Si vous souhaitez filtrer les offres par langue (uniquement en français, ou uniquement en anglais), utilisez les filtres disponibles dans l'interface de recherche.
+</Tip>
+
+## Qualité et complétude des données
+
+Tous les champs ne sont pas toujours disponibles. La qualité de l'extraction dépend directement de la façon dont l'entreprise structure ses offres :
+
+<Steps>
+  <Step title="ATS structuré (Greenhouse, Lever, Workday…)">
+    Les ATS modernes exposent les données dans un format standardisé. L'extraction est quasi-complète : titre, localisation, contrat, date et politique de télétravail sont généralement tous disponibles.
+  </Step>
+  <Step title="Page carrières propriétaire">
+    Les pages carrières développées en interne varient fortement. Certaines sont très bien structurées ; d'autres nécessitent une extraction textuelle plus interprétative, avec un risque accru de champs manquants.
+  </Step>
+  <Step title="Champs absents ou imprécis">
+    Lorsqu'une information est absente ou impossible à extraire avec fiabilité, le champ est affiché comme "non précisé" plutôt que deviné. offres.tech privilégie la précision à l'exhaustivité.
+  </Step>
+</Steps>
+
+## Signaler une erreur d'extraction
+
+Si vous constatez une erreur sur une fiche d'offre (mauvaise localisation, type de contrat incorrect, lien cassé), vous pouvez le signaler directement à [contact@offres.tech](mailto:contact@offres.tech) en indiquant l'URL de la fiche concernée.
+
+<Warning>
+  offres.tech ne peut pas modifier le contenu de l'offre originale — seul l'employeur en est responsable. En cas d'information incorrecte dans l'offre elle-même (salaire erroné, description obsolète), il convient de contacter directement l'entreprise.
+</Warning>

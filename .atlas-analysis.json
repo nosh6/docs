@@ -1,0 +1,93 @@
+{
+  "projectType": "saas",
+  "projectName": "Offres",
+  "projectDescription": "offres.tech aggregates tech job listings directly from company career sites and recruiting tools across France, providing a clean, deduplicated feed for candidates and a self-service profile for companies.",
+  "theme": "luma",
+  "primaryColor": "#2563eb",
+  "lightColor": "#84acf4",
+  "darkColor": null,
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Pour les candidats",
+        "groups": [
+          {
+            "group": "Commencer",
+            "pages": [
+              "introduction",
+              "candidats/alertes-email",
+              "candidats/suivre-une-entreprise"
+            ]
+          },
+          {
+            "group": "Votre compte",
+            "pages": [
+              "candidats/espace-candidatures",
+              "candidats/connexion"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Pour les entreprises",
+        "groups": [
+          {
+            "group": "Votre fiche",
+            "pages": [
+              "entreprises/apercu",
+              "entreprises/revendiquer-sa-fiche",
+              "entreprises/corriger-logo-site"
+            ]
+          },
+          {
+            "group": "Vos offres",
+            "pages": [
+              "entreprises/origine-des-offres",
+              "entreprises/outils-recrutement"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "La Méthode",
+        "groups": [
+          {
+            "group": "Catalogue",
+            "pages": [
+              "methode/perimetre",
+              "methode/deduplication",
+              "methode/lecture-offre"
+            ]
+          },
+          {
+            "group": "Données",
+            "pages": [
+              "donnees/collecte",
+              "donnees/confidentialite",
+              "donnees/contact"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Job listings sourced directly from company career pages and ATS tools — no aggregator copies",
+    "Email alerts for new matching job postings",
+    "Follow a specific company to track its openings",
+    "Personal application tracker (espace candidatures)",
+    "Passwordless account sign-in for candidates",
+    "Company profile claiming and self-service corrections (logo, website)",
+    "Automatic deduplication of identical offers published on multiple channels",
+    "Cookie-free audience measurement"
+  ],
+  "publicApiSurface": [
+    "Email alert subscription",
+    "Company follow / unfollow",
+    "Application tracking space",
+    "Passwordless login flow",
+    "Company profile claim form",
+    "Logo & site correction request",
+    "Contact: contact@offres.tech"
+  ]
+}
